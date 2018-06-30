@@ -1,0 +1,46 @@
+.choicer-item {
+  position: relative;
+  max-width: 100%;
+  cursor: pointer;
+  user-select: none;
+  margin: 10px;
+}
+
+.choicer-item-content {
+  height: 100px;
+  overflow: scroll;
+}
+
+@media (min-width: 768px) {
+  .choicer-item-container {
+    max-width: 25%;
+    display: inline-block;
+  } 
+}
+
+.choicer-item.disabled, .choicer-list.disabled .choicer-item {  
+  color: rgba(0,0,0,.26);
+  background-color: rgba(0,0,0,.12);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.choicer-selected-icon-container {    
+  opacity: 0;
+}
+
+.choicer-selected-icon-container .mat-icon {
+  font-size: 40px;
+  height: 40px;
+  width: 40px;
+  line-height: 40px;
+}
+
+.choicer-item.selected .choicer-selected-icon-container {
+  opacity: 1;
+}
+
+.choicer-item-image {
+  min-height: 175px;
+  height: 175px;
+}

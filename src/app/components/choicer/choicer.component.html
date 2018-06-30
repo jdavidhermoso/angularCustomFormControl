@@ -1,0 +1,26 @@
+<div class="choicer-list" [class.disabled]="disabled">
+  <div class="choicer-item-container" *ngFor="let item of itemsList">
+      <mat-card class="choicer-item"      
+      (click)="onItemClicked(item)"
+      [class.selected]="isItemSelected(item.id)" [class.disabled]="item.disabled">
+<mat-card-header>
+
+<div mat-card-avatar class="">
+    <div class="choicer-selected-icon-container">
+        <ng-container>
+          <mat-icon color="accent">{{icon}}</mat-icon>
+        </ng-container>
+      </div>
+</div>
+<mat-card-title>{{ item.title }}</mat-card-title>
+<mat-card-subtitle *ngIf="item.subtitle">{{item.subtitle}}</mat-card-subtitle>
+</mat-card-header>
+<img mat-card-image class="choicer-item-image" [src]="item.image" alt="Photo of a Shiba Inu">
+<mat-card-content class="choicer-item-content">
+{{item.description}}
+</mat-card-content>
+</mat-card>
+  </div>
+  
+</div>
+

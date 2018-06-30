@@ -1,0 +1,22 @@
+<div class="choicer-form-container">
+  <form [formGroup]="myForm">
+    <app-choicer formControlName="choicer" [itemsList]="items" [icon]="selectedChoicerItemIcon" [selectionMode]="selectionMode"></app-choicer>    
+  </form>
+</div>
+
+<div class="selected-options-container">
+  <p>
+    Selected cities
+  </p>
+  <p>
+    This element is just to illustrate that We are using the choicer-component as FormControl.
+  </p>
+
+  <ul>
+      <p *ngFor="let item of choicer.value">
+        {{item.title}}
+        </p>
+  </ul>  
+</div>
+
+
