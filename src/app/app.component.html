@@ -1,6 +1,6 @@
 <div class="choicer-form-container">
   <form [formGroup]="myForm">
-    <app-choicer formControlName="choicer" [itemsList]="items" [icon]="selectedChoicerItemIcon" [selectionMode]="selectionMode"></app-choicer>    
+    <app-choicer formControlName="choicer" [itemsList]="items" [icon]="selectedChoicerItemIcon" [selectionMode]="selectionMode"></app-choicer>
   </form>
 </div>
 
@@ -16,7 +16,7 @@
       <p *ngFor="let item of choicer.value">
         {{item.title}}
         </p>
-  </ul>  
+  </ul>
 </div>
 
 

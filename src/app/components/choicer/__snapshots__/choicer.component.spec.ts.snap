@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChoicerComponent ChoicerComponent:  When 1`] = `
+Array [
+  Object {
+    "description": "",
+    "disabled": false,
+    "id": 1,
+    "image": "",
+    "subtitle": "Item 1 subtitle",
+    "title": "Item 1 title",
+  },
+]
+`;
+
+exports[`ChoicerComponent ChoicerComponent:  When write value is called, selectedItems are updated with the passed values 1`] = `
+Array [
+  Object {
+    "description": "",
+    "disabled": false,
+    "id": 1,
+    "image": "",
+    "subtitle": "Item 1 subtitle",
+    "title": "Item 1 title",
+  },
+]
+`;
+
+exports[`ChoicerComponent ChoicerComponent:  When write value is called, selectedItems are updated with the passed values 2`] = `Array []`;
+
+exports[`ChoicerComponent ChoicerComponent: Component or items are disabled. Component is disabled, so none element should be selected 1`] = `Array []`;
+
+exports[`ChoicerComponent ChoicerComponent: Component or items are disabled. Single item is disabled, so none element should be selected 1`] = `Array []`;
+
+exports[`ChoicerComponent ChoicerComponent: Component or items are enabled. Item clicked is selected, so it should be unselected when clicked 1`] = `Array []`;
+
+exports[`ChoicerComponent ChoicerComponent: Component or items are enabled. Neither Component nor single item are disabled, so single element should be selected 1`] = `
+Array [
+  Object {
+    "description": "",
+    "disabled": false,
+    "id": 1,
+    "image": "",
+    "subtitle": "Item 1 subtitle",
+    "title": "Item 1 title",
+  },
+]
+`;

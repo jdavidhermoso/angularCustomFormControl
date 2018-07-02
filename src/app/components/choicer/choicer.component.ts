@@ -3,7 +3,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Item } from '../../models/item.model';
 import { SelectionModes } from './selection-modes.enum';
 
-
 @Component({
   selector: 'app-choicer',
   templateUrl: './choicer.component.html',
@@ -23,24 +22,23 @@ export class ChoicerComponent implements ControlValueAccessor {
   @Input() selectionMode: SelectionModes = SelectionModes.Multi;
 
   onChange = (items: Item[]) => {
-  }
+  };
 
   onTouched = () => {
-  }
+  };
 
-
-  get value(): Item[] {
+  public get value(): Item[] {
     return this.selectedItems;
   }
 
-  onItemClicked(item: Item) {
+  public onItemClicked(item: Item) {
     this.onTouched();
     if (!this.disabled && !item.disabled) {
       this.toggleItemState(item);
     }
   }
 
-  toggleItemState(item: Item) {
+  private toggleItemState(item: Item) {
     const itemId = item.id;
     if (this.isItemSelected(itemId)) {
       this.removeItemFromSelection(itemId);
@@ -51,11 +49,11 @@ export class ChoicerComponent implements ControlValueAccessor {
     this.onChange(this.value);
   }
 
-  canSelectItem() {
+  private canSelectItem() {
     return (this.selectionMode === SelectionModes.Single && this.selectedItems.length < 1) || this.selectionMode === SelectionModes.Multi;
   }
 
-  removeItemFromSelection(itemToRemoveId: number) {
+  private removeItemFromSelection(itemToRemoveId: number) {
     this.selectedItems = this.selectedItems.filter((selectedItem) => {
       return selectedItem.id !== itemToRemoveId;
     });
@@ -74,15 +72,11 @@ export class ChoicerComponent implements ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  setDisabledState(isDisabled: boolean) {
-    this.disabled = isDisabled;
-  }
-
-  isItemSelected(itemId: number) {
+  private isItemSelected(itemId: number) {
     return this.getItemByItemId(itemId);
   }
 
-  getItemByItemId(itemId: number) {
+  private getItemByItemId(itemId: number) {
     return this.selectedItems.find((item: Item) => {
       return item.id === itemId;
     });
